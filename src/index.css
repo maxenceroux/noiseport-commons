@@ -70,6 +70,15 @@ html.light .text-neutral-950 {
   color: white !important;
 }
 
+/* Fix SVG icon colors in light mode */
+html.light svg {
+  color: rgb(23 23 23);
+}
+
+html.light .text-white {
+  color: rgb(23 23 23) !important;
+}
+
 /* Borders */
 html.light .border-neutral-800 {
   @apply border-neutral-200;
