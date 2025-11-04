@@ -88,6 +88,10 @@ html.light .border-neutral-700 {
   @apply border-neutral-300;
 }
 
+html.light .border-transparent {
+  border-color: transparent !important;
+}
+
 /* Hover states */
 html.light .hover\:bg-neutral-900:hover {
   @apply bg-neutral-200;
