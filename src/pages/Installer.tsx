@@ -10,7 +10,7 @@ export default function Installer() {
   const [tab, setTab] = React.useState<"apps" | "server">("apps");
 
   return (
-    <div className="flex min-h-screen bg-neutral-950">
+    <div className="flex min-h-screen bg-neutral-950 pt-[73px]">
       {/* Left Navigation - Hidden on mobile, visible on md+ */}
       <div className="hidden md:block w-64 overflow-y-auto fixed left-0 top-[73px] bottom-0">
         <InstallerNavigation activeTab={tab} onTabChange={setTab} />
