@@ -6,8 +6,8 @@ import InstallerFooter from './InstallerFooter';
 
 interface InstallerLayoutProps {
   children: React.ReactNode;
-  activeTab: 'apps' | 'server';
-  onTabChange: (tab: 'apps' | 'server') => void;
+  activeTab: 'download' | 'join' | 'create';
+  onTabChange: (tab: 'download' | 'join' | 'create') => void;
 }
 
 export default function InstallerLayout({ children, activeTab, onTabChange }: InstallerLayoutProps) {

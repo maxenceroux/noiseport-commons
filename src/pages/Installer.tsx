@@ -1,13 +1,13 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import DesktopSection from "../components/DesktopSection";
-import MobileSection from "../components/MobileSection";
+import DownloadSection from "../components/DownloadSection";
+import JoinServerSection from "../components/JoinServerSection";
 import ServerSection from "../components/ServerSection";
 import InstallerNavigation from "../components/installer/InstallerNavigation";
 import InstallerTableOfContents from "../components/installer/InstallerTableOfContents";
 
 export default function Installer() {
-  const [tab, setTab] = React.useState<"apps" | "server">("apps");
+  const [tab, setTab] = React.useState<"download" | "join" | "create">("download");
 
   return (
     <div className="flex min-h-screen bg-neutral-950 pt-[73px]">
@@ -48,36 +48,42 @@ export default function Installer() {
               </div>
             </section>
 
-            <div id="apps" className="flex gap-4 mb-8 scroll-mt-24">
+            <div id="download" className="flex gap-4 mb-8 scroll-mt-24">
               <button
                 className={`px-4 py-2 rounded font-kode text-lg transition-colors duration-200 ${
-                  tab === "apps"
+                  tab === "download"
                     ? "bg-primary text-neutral-950"
                     : "bg-neutral-800 text-neutral-300 hover:bg-neutral-700"
                 }`}
-                onClick={() => setTab("apps")}
+                onClick={() => setTab("download")}
               >
-                NoisePort
+                Télécharger l'application
               </button>
               <button
                 className={`px-4 py-2 rounded font-kode text-lg transition-colors duration-200 ${
-                  tab === "server"
+                  tab === "join"
                     ? "bg-primary text-neutral-950"
                     : "bg-neutral-800 text-neutral-300 hover:bg-neutral-700"
                 }`}
-                onClick={() => setTab("server")}
+                onClick={() => setTab("join")}
               >
-                NoisePort Server
+                Rejoindre un serveur
+              </button>
+              <button
+                className={`px-4 py-2 rounded font-kode text-lg transition-colors duration-200 ${
+                  tab === "create"
+                    ? "bg-primary text-neutral-950"
+                    : "bg-neutral-800 text-neutral-300 hover:bg-neutral-700"
+                }`}
+                onClick={() => setTab("create")}
+              >
+                Créer un serveur
               </button>
             </div>
 
-            {tab === "apps" && (
-              <>
-                <DesktopSection />
-                <MobileSection />
-              </>
-            )}
-            {tab === "server" && <ServerSection />}
+            {tab === "download" && <DownloadSection />}
+            {tab === "join" && <JoinServerSection />}
+            {tab === "create" && <ServerSection />}
           </motion.div>
         </div>
       </main>

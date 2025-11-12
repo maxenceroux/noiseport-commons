@@ -10,16 +10,27 @@ const navigationItems: NavigationItem[] = [
     label: 'Vue d\'ensemble',
   },
   {
-    id: 'apps',
-    label: 'Applications',
+    id: 'download',
+    label: 'Télécharger l\'application',
     subsections: [
       { id: 'desktop', label: 'Desktop' },
       { id: 'mobile', label: 'Mobile' },
     ],
   },
   {
-    id: 'server',
-    label: 'Serveur',
+    id: 'join',
+    label: 'Rejoindre un serveur',
+    subsections: [
+      { id: 'prerequisites', label: 'Informations nécessaires' },
+      { id: 'tailscale-macos', label: 'Installation macOS' },
+      { id: 'tailscale-windows', label: 'Installation Windows' },
+      { id: 'tailscale-android', label: 'Installation Android' },
+      { id: 'connect-noiseport', label: 'Connexion à NoisePort' },
+    ],
+  },
+  {
+    id: 'create',
+    label: 'Créer un serveur',
     subsections: [
       { id: 'choose-machine', label: 'Choisir la machine' },
       { id: 'install-docker', label: 'Installer Docker' },
@@ -31,8 +42,8 @@ const navigationItems: NavigationItem[] = [
 ];
 
 interface InstallerNavigationProps {
-  activeTab: 'apps' | 'server';
-  onTabChange: (tab: 'apps' | 'server') => void;
+  activeTab: 'download' | 'join' | 'create';
+  onTabChange: (tab: 'download' | 'join' | 'create') => void;
 }
 
 export default function InstallerNavigation({ activeTab, onTabChange }: InstallerNavigationProps) {
@@ -45,7 +56,14 @@ export default function InstallerNavigation({ activeTab, onTabChange }: Installe
 
   const handleSubsectionClick = (parentId: string, subsectionId: string) => {
     // Determine which tab this subsection belongs to
-    const targetTab = parentId === 'apps' ? 'apps' : 'server';
+    let targetTab: 'download' | 'join' | 'create' = 'download';
+    if (parentId === 'download') {
+      targetTab = 'download';
+    } else if (parentId === 'join') {
+      targetTab = 'join';
+    } else if (parentId === 'create') {
+      targetTab = 'create';
+    }
     
     // If we're not on the right tab, switch first
     if (activeTab !== targetTab) {
@@ -68,17 +86,20 @@ export default function InstallerNavigation({ activeTab, onTabChange }: Installe
           <li key={item.id}>
             <button
               onClick={() => {
-                if (item.id === 'apps') {
-                  onTabChange('apps');
-                } else if (item.id === 'server') {
-                  onTabChange('server');
+                if (item.id === 'download') {
+                  onTabChange('download');
+                } else if (item.id === 'join') {
+                  onTabChange('join');
+                } else if (item.id === 'create') {
+                  onTabChange('create');
                 } else {
                   scrollToSection(item.id);
                 }
               }}
               className={`w-full text-left px-3 py-2 rounded transition-colors duration-200 font-syne ${
-                (item.id === 'apps' && activeTab === 'apps') || 
-                (item.id === 'server' && activeTab === 'server')
+                (item.id === 'download' && activeTab === 'download') || 
+                (item.id === 'join' && activeTab === 'join') ||
+                (item.id === 'create' && activeTab === 'create')
                   ? 'bg-primary text-neutral-950 font-bold'
                   : 'text-neutral-300 hover:bg-neutral-900 hover:text-neutral-100'
               }`}
