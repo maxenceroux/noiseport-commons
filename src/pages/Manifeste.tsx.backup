@@ -76,19 +76,28 @@ export default function Manifeste() {
         Le pair-à-pair, l’âge d’or du partage
       </h2>
       <p className="mb-8 text-base text-neutral-50">
-        Avant le streaming, il y avait Soulseek. Pas de pubs, pas d'algorithmes,
-        pas de métriques : des personnes qui partageaient leurs bibliothèques.
+        Et quel meilleur système que le pair-à-pair pour redonner sens au
+        partage ? Je me souviens de l’âge d’or de Soulseek — ce logiciel né au
+        début des années 2000, avant l’ère du streaming, où des milliers de
+        passionné·es mettaient en commun leurs bibliothèques musicales.
+        <br />
+        Pas de pubs, pas d’algorithmes, pas de recommandations : juste des
+        personnes qui partageaient ce qu’elles aimaient. On explorait la
+        collection d’un·e inconnu·e à l’autre bout du monde, on découvrait un
+        album rare, on entamait une conversation parce qu’on aimait tou·tes les
+        deux le même morceau.
+        <br />
+        On y partageait la musique, non pas pour la monétiser, mais pour la
+        faire vivre. C’était une économie morale, artisanale, fragile – mais
+        profondément humaine.
       </p>
       <p className="mb-8 text-base text-neutral-50">
-        On explorait la collection d'un·e inconnu·e, on découvrait un disque
-        rare, on lançait une discussion parce qu'on aimait le même morceau.
-        C'était une économie morale, artisanale, fragile – mais profondément
-        humaine.
-      </p>
-      <p className="mb-8 text-base text-neutral-50">
-        Cette culture n'a jamais disparu. Elle a été rendue invisible. Noiseport
-        s'inscrit dans cette filiation : reprendre l'idée du partage pair-à-pair
-        et lui donner des outils contemporains.
+        Soulseek n’est pas mort : des seeders éternel·les font encore vivre
+        l’idée d’une culture partagée, sans centralisation, sans autorité, sans
+        algorithme. Alors m’est venue l’envie — clairement une lubie geek — de
+        redonner ses lettres de noblesse à cette idée. Mais soyons clairs : son
+        interface est restée québlo en 2003, et devoir switcher d’appli juste
+        pour écouter ou télécharger, c’est un tue-l’amour total.
       </p>
       <h2 className="font-kode text-2xl text-primary mt-12 mb-4">
         Réconcilier confort et liberté — et vous donner les moyens d’être une
