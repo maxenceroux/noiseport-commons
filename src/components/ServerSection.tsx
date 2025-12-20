@@ -105,6 +105,18 @@ export default function ServerSection() {
         <b>Astuce&nbsp;:</b> Docker Desktop est recommandé pour Windows et
         macOS, sur Linux suivez le guide pour votre distribution.
         <br />
+        <br />
+        <b>Important pour Linux&nbsp;:</b> Pour éviter d'avoir à exécuter Docker
+        avec <code>sudo</code> à chaque fois, ajoutez votre utilisateur au groupe
+        docker&nbsp;:
+        <br />
+        <code className="bg-neutral-800 px-2 py-1 rounded text-primary">
+          sudo usermod -aG docker $USER
+        </code>
+        <br />
+        Déconnectez-vous puis reconnectez-vous pour que les changements prennent
+        effet.
+        <br />
       </div>
       <div
         id="get-code"
@@ -120,7 +132,7 @@ export default function ServerSection() {
             <br />
             <br />
             <code className="bg-neutral-800 px-2 py-1 rounded text-primary font-mono">
-              git clone https://github.com/raxmou/noiseport-server.git
+              git clone https://github.com/raxmou/noiseport-server.git && cd noiseport-server
             </code>
             <br />
             <br />
