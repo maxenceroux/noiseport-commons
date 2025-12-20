@@ -132,7 +132,7 @@ export default function ServerSection() {
             <br />
             <br />
             <code className="bg-neutral-800 px-2 py-1 rounded text-primary font-mono">
-              git clone https://github.com/raxmou/noiseport-server.git
+              git clone https://github.com/raxmou/noiseport-server.git && cd noiseport-server
             </code>
             <br />
             <br />
